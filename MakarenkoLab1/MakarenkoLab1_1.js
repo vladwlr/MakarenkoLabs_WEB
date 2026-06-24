@@ -1,18 +1,18 @@
-const primes = [];
+const output = document.getElementById('answer');
+const simpleNumbers = [];
 
-function isPrimeNumber(value) {
+function isSimpleNumber(value) {
     if (value < 2) return false;
-
-    for (let divisor = 2; divisor <= Math.sqrt(value); divisor++) {
-        if (value % divisor === 0) return false;
+    for (let divider = 2; divider <= Math.sqrt(value); divider++) {
+        if (value % divider === 0) return false;
     }
-
     return true;
 }
 
-for (let number = 2; number <= 100; number++) {
-    if (isPrimeNumber(number)) primes.push(number);
+for (let value = 2; value <= 100; value++) {
+    if (isSimpleNumber(value)) simpleNumbers.push(value);
 }
 
-console.log("Прості числа від 2 до 100:");
-console.log(primes.join(", "));
+const text = simpleNumbers.join(', ');
+output.textContent = text;
+console.log('Прості числа від 2 до 100:', text);

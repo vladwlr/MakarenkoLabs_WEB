@@ -1,10 +1,17 @@
-let currentValue = 10000;
-let divideCount = 0;
+const output = document.getElementById('answer');
+let numberValue = 10000;
+let steps = 0;
+const history = [];
 
-while (currentValue >= 50) {
-    currentValue = currentValue / 2;
-    divideCount++;
+while (numberValue >= 50) {
+    history.push(`${numberValue} / 2 = ${numberValue / 2}`);
+    numberValue = numberValue / 2;
+    steps++;
 }
 
-console.log(`Кількість поділів: ${divideCount}`);
-console.log(`Останнє значення: ${currentValue}`);
+output.textContent = `Кількість поділів: ${steps}
+Останнє значення: ${numberValue}
+
+Хід роботи:
+${history.join('\n')}`;
+console.log(output.textContent);

@@ -1,13 +1,3 @@
-# MakarenkoLab8
+# Лабораторна робота 8
 
-Лабораторна робота 8. Web-додаток гри на Node.js та Express.
-
-## Запуск
-
-```bash
-cd MakarenkoLab8
-npm install
-npm start
-```
-
-Після запуску відкрити: `http://localhost:3000`.
+Статична версія гри 1–25 відкривається через `index.html` і працює на GitHub Pages без запуску Node.js.

@@ -37,7 +37,7 @@
       if (value === '') { answer.textContent = 'Спочатку введи число.'; return; }
 
       try {
-        const response = await fetch('/calculate-square', {
+        const response = await fetch('calculate-square', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ value })

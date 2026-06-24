@@ -1,28 +1,33 @@
-const dictionary = {
+const weekData = {
     ua: {
-        askDay: "Введіть номер дня тижня: 1-7",
-        badLang: "Мова вказана неправильно",
-        badDay: "День повинен бути від 1 до 7",
-        days: ["понеділок", "вівторок", "середа", "четвер", "пʼятниця", "субота", "неділя"]
+        title: 'Українська мова',
+        badDay: 'Потрібно ввести число від 1 до 7.',
+        days: ['понеділок', 'вівторок', 'середа', 'четвер', 'пʼятниця', 'субота', 'неділя']
     },
     en: {
-        askDay: "Enter weekday number: 1-7",
-        badLang: "Wrong language",
-        badDay: "Day must be from 1 to 7",
-        days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        title: 'English',
+        badDay: 'Enter a number from 1 to 7.',
+        days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     }
 };
 
-let selectedLang = "";
-while (!dictionary[selectedLang]) {
-    selectedLang = (prompt('Language: ua / en') || '').trim().toLowerCase();
-    if (!dictionary[selectedLang]) alert(dictionary.ua.badLang);
+const langSelect = document.getElementById('lang');
+const dayInput = document.getElementById('day');
+const answer = document.getElementById('answer');
+const showButton = document.getElementById('showDay');
+
+function showWeekday() {
+    const lang = langSelect.value;
+    const dayNumber = Number(dayInput.value);
+    const current = weekData[lang];
+
+    if (dayNumber < 1 || dayNumber > 7 || Number.isNaN(dayNumber)) {
+        answer.innerHTML = `<b>${current.title}:</b> ${current.badDay}`;
+        return;
+    }
+
+    answer.innerHTML = `<span class="pill">${current.title}</span><br><br>День №${dayNumber}: <b>${current.days[dayNumber - 1]}</b>`;
 }
 
-let selectedDay = 0;
-while (selectedDay < 1 || selectedDay > 7) {
-    selectedDay = Number(prompt(dictionary[selectedLang].askDay));
-    if (selectedDay < 1 || selectedDay > 7) alert(dictionary[selectedLang].badDay);
-}
-
-alert(dictionary[selectedLang].days[selectedDay - 1]);
+showButton.addEventListener('click', showWeekday);
+showWeekday();

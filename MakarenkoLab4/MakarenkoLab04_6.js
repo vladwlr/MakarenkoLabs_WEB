@@ -1,10 +1,13 @@
 const marks = [8, 12, 5, 10, 7, 11, 9];
 const oddValues = marks.filter((value) => value % 2 !== 0);
 const total = marks.reduce((sum, value) => sum + value, 0);
-
-console.log("Масив:", marks);
-console.log("Максимум:", Math.max(...marks));
-console.log("Мінімум:", Math.min(...marks));
-console.log("Сума:", total);
-console.log("Середнє:", (total / marks.length).toFixed(2));
-console.log("Непарні:", oddValues);
+const lines = [
+    `Масив: ${marks.join(', ')}`,
+    `Максимум: ${Math.max(...marks)}`,
+    `Мінімум: ${Math.min(...marks)}`,
+    `Сума: ${total}`,
+    `Середнє: ${(total / marks.length).toFixed(2)}`,
+    `Непарні: ${oddValues.join(', ')}`
+];
+document.getElementById('result').textContent = lines.join('\n');
+console.log(lines.join('\n'));
