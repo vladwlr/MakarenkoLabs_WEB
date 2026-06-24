@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЛР2 · DOM-події</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f7fb;color:#172033;padding:26px}.layout{max-width:1050px;margin:auto}.head{background:#111827;color:white;border-radius:22px;padding:24px;margin-bottom:18px}.head p{color:#cbd5e1}.panel{background:white;border:1px solid #dce5f2;border-radius:22px;padding:20px;margin:16px 0;box-shadow:0 12px 35px rgba(15,23,42,.08)}.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.photos img{width:100%;height:230px;object-fit:cover;border-radius:18px;border:4px solid transparent;cursor:pointer;transition:.2s}.photos img.active{border-color:#2563eb;filter:saturate(1.15)}.links{display:flex;gap:10px;flex-wrap:wrap}.links a{padding:11px 16px;border-radius:999px;background:#e0f2fe;color:#075985;text-decoration:none;font-weight:700}.inputs{display:flex;gap:12px;flex-wrap:wrap}.inputs input{padding:12px 14px;border-radius:13px;border:1px solid #cbd5e1;font-size:16px}.badge{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:13px;background:#f1f5f9;color:#334155}.numbers{display:flex;gap:12px;flex-wrap:wrap}.numbers button{border:0;border-radius:16px;padding:14px 22px;background:#111827;color:white;font-size:17px;cursor:pointer}.numbers button.done{background:#16a34a}</style>
+</head>
+<body>
+<main class="layout">
+  <section class="head">
+    <h1>Лабораторна робота 2</h1>
+    <p>Макаренко Владислав, 303-ТН. Тут перевіряю події для картинок, посилань, input та кнопок.</p>
+  </section>
+
+  <section class="panel">
+    <h2>1. Картинки</h2>
+    <p>Клік по картинці виводить її ширину в консоль і підсвічує вибір.</p>
+    <div class="photos">
+      <img src="images/image_1.jpg" alt="Перша картинка">
+      <img src="images/image_2.jpg" alt="Друга картинка">
+      <img src="images/image_3.jpg" alt="Третя картинка">
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>2. Посилання</h2>
+    <div class="links">
+      <a href="https://google.com">Google</a>
+      <a href="https://github.com">GitHub</a>
+      <a href="https://w3schools.com">W3Schools</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>3. Поля введення</h2>
+    <div class="inputs">
+      <input value="HTML">
+      <input value="CSS">
+      <input value="JavaScript">
+    </div>
+    <div id="pickedText" class="badge">Тут зʼявиться вибране значення</div>
+  </section>
+
+  <section class="panel">
+    <h2>4. Квадрат числа</h2>
+    <div class="numbers">
+      <button data-number="2">2</button>
+      <button data-number="5">5</button>
+      <button data-number="8">8</button>
+    </div>
+  </section>
+</main>
+<script>
+  const photoList = document.querySelectorAll('.photos img');
+  photoList.forEach((photo) => {
+    photo.addEventListener('click', () => {
+      photo.classList.toggle('active');
+      console.log(`Ширина картинки: ${photo.naturalWidth}px`);
+    });
+  });
+
+  document.querySelectorAll('.links a').forEach((link) => {
+    link.addEventListener('mouseenter', () => {
+      link.title = `Перехід: ${link.href}`;
+    });
+  });
+
+  const pickedText = document.getElementById('pickedText');
+  document.querySelectorAll('.inputs input').forEach((field) => {
+    let alreadyClicked = false;
+    field.addEventListener('click', () => {
+      pickedText.textContent = `Обрано: ${field.value}`;
+      alreadyClicked ? alert(field.value) : console.log(field.value);
+      alreadyClicked = true;
+    });
+  });
+
+  document.querySelectorAll('.numbers button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const value = Number(button.dataset.number);
+      button.textContent = `${value}² = ${value ** 2}`;
+      button.classList.add('done');
+    });
+  });
+</script>
+</body>
+</html>

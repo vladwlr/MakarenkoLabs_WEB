@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React CDN</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0f172a;font-family:Segoe UI,Arial,sans-serif;color:#e5e7eb}.content{width:min(650px,92%);background:#111827;border:1px solid #334155;border-radius:26px;padding:28px;box-shadow:0 24px 65px rgba(0,0,0,.32)}.block{padding:16px;border-radius:18px;background:#1f2937;margin:14px 0}.muted{color:#cbd5e1}li{margin:7px 0}
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class TrainingBlock extends React.Component {
+        render() {
+            return (
+                <div className="block">
+                    <h2>Тренування</h2>
+                    <p className="muted">У вільний час стараюсь підтримувати форму: зал, ходьба і базові вправи.</p>
+                </div>
+            );
+        }
+    }
+
+    function WebBlock() {
+        const points = ['HTML/CSS', 'JavaScript', 'React'];
+        return (
+            <div className="block">
+                <h2>Веб-розробка</h2>
+                <p className="muted">Окремо цікаво робити невеликі сторінки і пробувати компоненти.</p>
+                <ul>{points.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+        );
+    }
+
+    function App() {
+        return (
+            <main className="content">
+                <h1>Мої інтереси</h1>
+                <p>Макаренко Владислав, 303-ТН</p>
+                <TrainingBlock />
+                <WebBlock />
+            </main>
+        );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

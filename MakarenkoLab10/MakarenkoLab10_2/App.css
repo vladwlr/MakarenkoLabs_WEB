@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    background: #eef2ff;
+    font-family: Segoe UI, Arial, sans-serif;
+}
+
+.App {
+    width: min(760px, 92%);
+    margin: 60px auto;
+    padding: 28px;
+    background: #ffffff;
+    border-radius: 26px;
+    box-shadow: 0 20px 55px rgba(67, 56, 202, 0.16);
+}
+
+.label {
+    color: #4338ca;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.student {
+    color: #64748b;
+}
+
+.card {
+    margin-top: 16px;
+    padding: 18px;
+    border-radius: 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.card.accent {
+    background: #eef2ff;
+}
+
+li {
+    margin: 8px 0;
+}

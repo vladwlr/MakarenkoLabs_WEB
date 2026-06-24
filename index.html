@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakarenkoLabs_WEB</title>
+  <style>
+    :root{--bg:#0f172a;--card:#111c33;--line:#263650;--text:#e5edf8;--muted:#9fb0c7;--accent:#38bdf8;--accent2:#22c55e}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;font-family:Segoe UI,Arial,sans-serif;background:radial-gradient(circle at top left,#1e3a8a 0,#0f172a 42%,#0b1120 100%);color:var(--text)}
+    .page{max-width:1080px;margin:0 auto;padding:42px 18px 58px}
+    .hero{border:1px solid var(--line);border-radius:26px;padding:30px;background:rgba(17,28,51,.78);box-shadow:0 22px 70px rgba(0,0,0,.28)}
+    .tag{display:inline-block;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(56,189,248,.13);color:#bae6fd;font-size:14px}
+    h1{margin:0 0 10px;font-size:42px;letter-spacing:-1px}
+    .hero p{margin:8px 0;color:var(--muted);font-size:17px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:22px}
+    .lab{display:block;min-height:126px;padding:18px;border:1px solid var(--line);border-radius:20px;background:rgba(15,23,42,.72);text-decoration:none;color:var(--text);transition:.18s transform,.18s border,.18s background}
+    .lab:hover{transform:translateY(-4px);border-color:var(--accent);background:#14213d}
+    .num{color:var(--accent);font-weight:800;font-size:15px;text-transform:uppercase}
+    .lab h2{margin:8px 0 7px;font-size:22px}
+    .lab span{color:var(--muted);line-height:1.35}
+    .note{margin-top:20px;color:var(--muted);font-size:14px}
+    code{background:#16243f;padding:3px 7px;border-radius:7px;color:#dbeafe}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="tag">Веб-програмування та веб-дизайн</div>
+      <h1>Лабораторні роботи</h1>
+      <p><b>Макаренко Владислав</b>, група 303-ТН</p>
+      <p>Зібрав усе в одну папку, щоб на парі швидко відкривати потрібну роботу.</p>
+      <div class="grid">
+        <a class="lab" href="MakarenkoLab1/index.html"><div class="num">Lab 01</div><h2>JavaScript</h2><span>умови, цикли, prompt/alert, консоль</span></a>
+        <a class="lab" href="MakarenkoLab2/index.html"><div class="num">Lab 02</div><h2>DOM і події</h2><span>клік, hover, зміна елементів сторінки</span></a>
+        <a class="lab" href="MakarenkoLab3/public/index.html"><div class="num">Lab 03</div><h2>Калькулятор</h2><span>інтерфейс через JS, запуск також через Express</span></a>
+        <a class="lab" href="MakarenkoLab4/index.html"><div class="num">Lab 04</div><h2>Функції</h2><span>масиви, числа, матриці, прості перевірки</span></a>
+        <a class="lab" href="MakarenkoLab5/templates/index.html"><div class="num">Lab 05</div><h2>Flask</h2><span>фронтенд + POST-запит на сервер</span></a>
+        <a class="lab" href="MakarenkoLab6/index.html"><div class="num">Lab 06</div><h2>Об’єкти</h2><span>класи, структура даних, модель електромережі</span></a>
+        <a class="lab" href="MakarenkoLab7/index.html"><div class="num">Lab 07</div><h2>Дата і гра</h2><span>форматування часу та вгадування числа</span></a>
+        <a class="lab" href="MakarenkoLab8/views/index.html"><div class="num">Lab 08</div><h2>Міні-гра</h2><span>таблиця чисел, таймер, результати</span></a>
+        <a class="lab" href="MakarenkoLab10/index.html"><div class="num">Lab 10</div><h2>React</h2><span>компоненти, props/масиви, приклади</span></a>
+      </div>
+      <p class="note">Для робіт з Node.js/Flask краще запускати сервер, як описано в README.</p>
+    </section>
+  </main>
+</body>
+</html>

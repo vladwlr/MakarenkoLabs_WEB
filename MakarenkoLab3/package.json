@@ -1,0 +1,14 @@
+{
+  "name": "makarenko-lab3-calculator",
+  "version": "1.0.0",
+  "description": "Laboratory work 3: JavaScript calculator with Express server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Makarenko Vladyslav, 303-TN",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
